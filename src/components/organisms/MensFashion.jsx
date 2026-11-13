@@ -1,4 +1,4 @@
-
+import AnimatedProductCard from "../molecules/AnimatedProductCard";
 import ProductCard from "../molecules/ProductCard";
 import { menProducts } from "../../data/products";
 import TopSellingBanner from "./TopSellingBanner";
@@ -19,10 +19,11 @@ function MensFashion() {
 
       {/* Men's Products */}
       <div className="grid grid-cols-2 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {menProducts.map((product) => (
-          <ProductCard
+        {menProducts.map((product, index) => (
+          <AnimatedProductCard
             key={product.id}
-            {...product}
+            product={product}
+            index={index}
           />
         ))}
       </div>

@@ -1,4 +1,4 @@
-
+import AnimatedProductCard from "../molecules/AnimatedProductCard";
 import ProductCard from "../molecules/ProductCard";
 import { clothingProducts } from "../../data/products";
 
@@ -16,13 +16,11 @@ function ClothingCollection() {
         {/* Products Grid */}
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
 
-          {clothingProducts.map((product) => (
-            <ProductCard
+          {clothingProducts.map((product, index) => (
+            <AnimatedProductCard
               key={product.id}
-              image={product.image}
-              name={product.name}
-              originalPrice={product.originalPrice}
-              price={product.price}
+              product={product}
+              index={index}
             />
           ))}
 

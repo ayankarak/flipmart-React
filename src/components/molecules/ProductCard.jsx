@@ -8,7 +8,7 @@ function ProductCard({
     price,
 }) {
     return (
-        <div className="group flex min-w-0 flex-col items-center border border-gray-200 bg-white p-3 transition duration-300 hover:-translate-y-1 hover:shadow-md">
+        <div className="h-36 w-full object-contain transition-transform duration-500 group-hover:scale-110 sm:h-40">
 
             {/* Product Image */}
             <div className="h-36 w-full overflow-hidden sm:h-40">

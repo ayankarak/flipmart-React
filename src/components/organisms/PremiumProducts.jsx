@@ -1,7 +1,7 @@
 
 import ProductCard from "../molecules/ProductCard";
 import AdBanner from "./AdBanner";
-
+import AnimatedProductCard from "../molecules/AnimatedProductCard";
 import premiumProducts from "../../data/products";
 
 function PremiumProducts() {
@@ -19,13 +19,11 @@ function PremiumProducts() {
 
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
 
-            {premiumProducts.map((product) => (
-              <ProductCard
+            {premiumProducts.map((product, index) => (
+              <AnimatedProductCard
                 key={product.id}
-                image={product.image}
-                name={product.name}
-                originalPrice={product.originalPrice}
-                price={product.price}
+                product={product}
+                index={index}
               />
             ))}
 
