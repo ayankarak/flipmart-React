@@ -1,13 +1,12 @@
+import { Link } from "react-router";
 
 function Logo() {
   return (
-    <div className="flex items-center gap-1">
+    <Link to="/" aria-label="Flipmart home" className="flex items-center gap-1">
       <span className="text-2xl">🛍️</span>
 
-      <h1 className="text-xl font-extrabold text-blue-600">
-        Flipmart
-      </h1>
-    </div>
+      <span className="text-xl font-extrabold text-blue-600">Flipmart</span>
+    </Link>
   );
 }
 

@@ -1,4 +1,3 @@
-
 import { motion } from "motion/react";
 import { Heart, UserRound, ShoppingBag } from "lucide-react";
 
@@ -6,6 +5,12 @@ import Logo from "../atoms/Logo";
 import Button from "../atoms/Button";
 import IconButton from "../atoms/IconButton";
 import SearchBar from "../molecules/SearchBar";
+
+const headerIcons = [
+  { icon: Heart, label: "Wishlist", to: "/wishlist" },
+  { icon: UserRound, label: "Account", to: "/account" },
+  { icon: ShoppingBag, label: "Cart", to: "/cart" },
+];
 
 function Header() {
   return (
@@ -36,24 +41,19 @@ function Header() {
           whileTap={{ scale: 0.95 }}
           className="hidden md:block"
         >
-          <Button className="shrink-0">
-            Become a Vendor
-          </Button>
+          <Button className="shrink-0">Become a Vendor</Button>
         </motion.div>
 
         {/* Icons */}
         <div className="flex items-center gap-1">
-          {[Heart, UserRound, ShoppingBag].map((Icon, index) => (
+          {headerIcons.map(({ icon, label, to }) => (
             <motion.div
-              key={index}
+              key={label}
               whileHover={{ scale: 1.15, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.2 }}
             >
-              <IconButton
-                icon={Icon}
-                label={["Wishlist", "Account", "Cart"][index]}
-              />
+              <IconButton icon={icon} label={label} to={to} />
             </motion.div>
           ))}
         </div>
