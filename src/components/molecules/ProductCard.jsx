@@ -1,5 +1,6 @@
 
 import ProductImage from "../atoms/ProductImage";
+import { formatPrice } from "../../utils/format";
 
 function ProductCard({
   image,
@@ -27,12 +28,12 @@ function ProductCard({
 
         {originalPrice != null && (
           <span className="text-gray-400 line-through">
-            ${Number(originalPrice).toFixed(2)}
+            {formatPrice(originalPrice)}
           </span>
         )}
 
         <span className="font-semibold text-gray-800">
-          ${Number(price).toFixed(2)}
+          {formatPrice(price)}
         </span>
 
       </div>

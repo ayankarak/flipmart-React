@@ -1,7 +1,7 @@
 
 import AdBanner from "./AdBanner";
 import AnimatedProductCard from "../molecules/AnimatedProductCard";
-import premiumProducts from "../../data/products";
+import { premiumProducts } from "../../data/products";
 
 function PremiumProducts() {
   return (

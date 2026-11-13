@@ -4,6 +4,7 @@ import MainLayout from "../components/common/MainLayout";
 import PlaceholderPage from "../components/common/PlaceholderPage";
 import HomePage from "../pages/Home/HomePage";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
+import DataPreviewPage from "../pages/DevPreview/DataPreviewPage";
 
 /**
  * Temporary placeholders. Each one is replaced by a real page
@@ -44,6 +45,9 @@ function AppRoutes() {
           path="/order-success/:orderId"
           element={placeholder("Order Confirmed")}
         />
+
+        {/* Temporary developer page, removed in a later step */}
+        <Route path="/dev/data" element={<DataPreviewPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

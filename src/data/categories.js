@@ -1,54 +1,104 @@
+import { productImage } from "./images.js";
+
+/**
+ * type: "category"   -> products belong to it via product.categoryId
+ * type: "collection" -> curated/derived list (rules live in utils/productUtils.js)
+ *
+ * IDs 1-10 match the original navbar order.
+ */
+export const CATEGORY_IDS = {
+  ACCESSORIES: 1,
+  AUDIO: 2,
+  BEAUTY: 3,
+  BEST_DEALS: 4,
+  BEST_SELLER: 5,
+  CAMERAS: 6,
+  CHAIR: 7,
+  CLOTHING: 8,
+  COMPUTER_LAPTOP: 9,
+  ELECTRONICS: 10,
+};
 
 const categories = [
   {
     id: 1,
+    slug: "accessories",
     name: "Accessories",
-    image: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=200&q=80",
+    type: "category",
+    description: "Watches, sunglasses and bags to finish every look.",
+    image: productImage("sunglasses/black-sun-glasses"),
   },
   {
     id: 2,
+    slug: "audio",
     name: "Audio",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&q=80",
+    type: "category",
+    description: "Earbuds, headphones and smart speakers for great sound.",
+    image: productImage("mobile-accessories/apple-airpods"),
   },
   {
     id: 3,
+    slug: "beauty",
     name: "Beauty",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&q=80",
+    type: "category",
+    description: "Makeup and beauty essentials from loved brands.",
+    image: productImage("beauty/red-lipstick"),
   },
   {
     id: 4,
+    slug: "best-deals",
     name: "Best Deals",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&q=80",
+    type: "collection",
+    description: "Biggest savings right now: products with 25% off or more.",
+    image: productImage("laptops/lenovo-yoga-920"),
   },
   {
     id: 5,
+    slug: "best-seller",
     name: "Best Seller",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=200&q=80",
+    type: "collection",
+    description: "The products our customers love the most.",
+    image: productImage("womens-dresses/corset-leather-with-skirt"),
   },
   {
     id: 6,
+    slug: "cameras",
     name: "Cameras",
-    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=200&q=80",
+    type: "category",
+    description: "Camera support and creator gear: pedestals, monopods and lights.",
+    image: productImage("mobile-accessories/tv-studio-camera-pedestal"),
   },
   {
     id: 7,
+    slug: "chair",
     name: "Chair",
-    image: "https://images.unsplash.com/photo-1503602642458-232111445657?w=200&q=80",
+    type: "category",
+    description: "Comfortable seating for your home and office.",
+    image: productImage("furniture/knoll-saarinen-executive-conference-chair"),
   },
   {
     id: 8,
+    slug: "clothing",
     name: "Clothing",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=200&q=80",
+    type: "category",
+    description: "Fashion and footwear for men and women.",
+    image: productImage("mens-shirts/men-check-shirt"),
   },
   {
     id: 9,
+    slug: "computer-laptop",
     name: "Computer & Laptop",
-    image: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=200&q=80",
+    type: "category",
+    description: "Laptops for work, study and creative projects.",
+    image: productImage("laptops/asus-zenbook-pro-dual-screen-laptop"),
   },
   {
     id: 10,
+    slug: "electronics",
     name: "Electronics",
-    image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=200&q=80",
+    type: "category",
+    description: "Smartphones, tablets, smartwatches and more.",
+    image: productImage("smartphones/iphone-13-pro"),
   },
 ];
 
