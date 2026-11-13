@@ -5,14 +5,17 @@ import Logo from "../atoms/Logo";
 import Button from "../atoms/Button";
 import IconButton from "../atoms/IconButton";
 import SearchBar from "../molecules/SearchBar";
-
-const headerIcons = [
-  { icon: Heart, label: "Wishlist", to: "/wishlist" },
-  { icon: UserRound, label: "Account", to: "/account" },
-  { icon: ShoppingBag, label: "Cart", to: "/cart" },
-];
+import { useCart } from "../../hooks/useCart";
 
 function Header() {
+  const { cartCount } = useCart();
+
+  const headerIcons = [
+    { icon: Heart, label: "Wishlist", to: "/wishlist", badge: 0 },
+    { icon: UserRound, label: "Account", to: "/account", badge: 0 },
+    { icon: ShoppingBag, label: cartCount > 0 ? `Cart, ${cartCount} items` : "Cart", to: "/cart", badge: cartCount },
+  ];
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -30 }}
@@ -46,14 +49,14 @@ function Header() {
 
         {/* Icons */}
         <div className="flex items-center gap-1">
-          {headerIcons.map(({ icon, label, to }) => (
+          {headerIcons.map(({ icon, label, to, badge }) => (
             <motion.div
               key={label}
               whileHover={{ scale: 1.15, y: -3 }}
               whileTap={{ scale: 0.9 }}
               transition={{ duration: 0.2 }}
             >
-              <IconButton icon={icon} label={label} to={to} />
+              <IconButton icon={icon} label={label} to={to} badge={badge} />
             </motion.div>
           ))}
         </div>

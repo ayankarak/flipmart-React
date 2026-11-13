@@ -6,6 +6,7 @@ import HomePage from "../pages/Home/HomePage";
 import NotFoundPage from "../pages/NotFound/NotFoundPage";
 import DataPreviewPage from "../pages/DevPreview/DataPreviewPage";
 import UiPreviewPage from "../pages/DevPreview/UiPreviewPage";
+import CartPreviewPage from "../pages/DevPreview/CartPreviewPage";
 
 /**
  * Temporary placeholders. Each one is replaced by a real page
@@ -50,6 +51,7 @@ function AppRoutes() {
         {/* Temporary developer page, removed in a later step */}
         <Route path="/dev/data" element={<DataPreviewPage />} />
         <Route path="/dev/ui" element={<UiPreviewPage />} />
+        <Route path="/dev/cart" element={<CartPreviewPage />} />
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>
