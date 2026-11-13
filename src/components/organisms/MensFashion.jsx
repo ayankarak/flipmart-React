@@ -1,24 +1,25 @@
+
 import AnimatedProductCard from "../molecules/AnimatedProductCard";
-import ProductCard from "../molecules/ProductCard";
 import { menProducts } from "../../data/products";
 import TopSellingBanner from "./TopSellingBanner";
 
 function MensFashion() {
   return (
-    <section className="mx-auto max-w-[1440px] px-5 py-10">
+    <section className="mx-auto max-w-[1440px] px-2 py-6 sm:px-5 sm:py-10">
 
       {/* Section Heading */}
-      <h2 className="mb-6 text-2xl font-bold text-gray-900">
+      <h2 className="mb-6 text-xl font-bold text-gray-900 sm:text-2xl">
         Men's Fashion
       </h2>
 
       {/* Top Selling Banner */}
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <TopSellingBanner />
       </div>
 
       {/* Men's Products */}
-      <div className="grid grid-cols-2 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid min-w-0 grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
+
         {menProducts.map((product, index) => (
           <AnimatedProductCard
             key={product.id}
@@ -26,6 +27,7 @@ function MensFashion() {
             index={index}
           />
         ))}
+
       </div>
 
     </section>
