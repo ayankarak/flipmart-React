@@ -1,2 +1,23 @@
-
 @import "tailwindcss";
+
+/*
+ * Product card hover reveal.
+ * On devices that can hover (mouse), actions are hidden until the card is
+ * hovered or focused. On touch devices they are always visible.
+ */
+.card-reveal {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+@media (hover: hover) {
+  .card-reveal {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  .product-card:hover .card-reveal,
+  .product-card:focus-within .card-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,8 +1,7 @@
-
 import { motion } from "motion/react";
 import ProductCard from "./ProductCard";
 
-function AnimatedProductCard({ product, index = 0 }) {
+function AnimatedProductCard({ product, index = 0, showRating = false }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -18,7 +17,7 @@ function AnimatedProductCard({ product, index = 0 }) {
         transition: { duration: 0.25 },
       }}
     >
-      <ProductCard {...product} />
+      <ProductCard product={product} showRating={showRating} />
     </motion.div>
   );
 }
